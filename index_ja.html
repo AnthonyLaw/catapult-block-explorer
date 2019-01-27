@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="pt-BR">
+<html lang="ja">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,20 +35,20 @@
 				</form>
 			</div>
 			<div class="row">
-				<select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
-					<option value="">Select language...</option>
+				<select class="custom-select" style="width:200px;" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+					<option value="">言語選択...</option>
 					<option value="index.html">English</option>
-					<option value="index_pt.html" selected>Portuguese</option>
+					<option value="index_pt.html">Portuguese</option>
 					<option value="index_es.html">Spanish</option>
-					<option value="index_ja.html">Japanese</option>
+					<option value="index_ja.html" selected>Japanese</option>
 				</select>
 			</div>
 			<div class="row">
-				<div class="twelve columns"><strong>Altura do bloco:</strong> <span id="chain-height"></span></div>
+				<div class="twelve columns"><strong>現在のブロック高:</strong> <span id="chain-height"></span></div>
 
 			</div>
 			<div class="row">
-				<div class="twelve columns"><strong>Dica:</strong> Voc&ecirc; pode utilizar as setas para navegar entre as p&aacute;ginas</div>
+				<div class="twelve columns"><strong>備考:</strong> 下部の矢印でページを移動できます。</div>
 			</div>
 		</div>
 
@@ -56,10 +56,10 @@
 		<nav class="navbar">
 		<div class="container">
 			<ul class="navbar-list">
-				<li class="navbar-item"><a class="navbar-link" href="#/blocks/0">Blocos</a></li>
-				<li class="navbar-item"><a class="navbar-link" href="#/unconfirmed/">N&atilde;o confirmados</a></li>
-				<li class="navbar-item"><a class="navbar-link" href="#/failed/">Falhas</a></li>
-				<li class="navbar-item"><a class="navbar-link" href="#/statistics/from/0/to/0/grouping/60">Estat&iacute;sticas</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#/blocks/0">ブロック</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#/unconfirmed/">未承認</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#/failed/">失敗</a></li>
+				<li class="navbar-item"><a class="navbar-link" href="#/statistics/from/0/to/0/grouping/60">統計情報</a></li>
 			</ul>
 		</div>
 		</nav>
