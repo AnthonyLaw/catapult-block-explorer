@@ -1,11 +1,11 @@
 <table id="blocks" class="u-full-width">
   <thead>
     <tr>
-      <th>Height</th>
-      <th>Timestamp</th>
-      <th>Harvester</th>
-      <th>#TXes</th>
-      <th>Fees</th>
+      <th>{{language.HEIGHT}}</th>
+      <th>{{language.TIMESTAMP}}</th>
+      <th>{{language.HARVESTER}}</th>
+      <th>#{{language.TXES}}</th>
+      <th>{{language.FEES}}</th>
     </tr>
   </thead>
 </table>
@@ -13,17 +13,17 @@
 {{#showNav}}
 <ul id="paging">
 	{{#prev}}
-	<li><a rel="prev" href="#/blocks/{{prev}}">prev page</a></li>
+	<li><a rel="prev" href="#/blocks/{{prev}}">{{language.PREV_PAGE}}</a></li>
 	{{/prev}}
 	{{^prev}}
-	<li><a nohref>prev page</a></li>
+	<li><a nohref>{{language.PREV_PAGE}}</a></li>
 	{{/prev}}
-	
+
 	{{#next}}
-	<li><a rel="next" href="#/blocks/{{next}}">next page</a></li>
+	<li><a rel="next" href="#/blocks/{{next}}">{{language.NEXT_PAGE}}</a></li>
 	{{/next}}
 	{{^next}}
-	<li><a nohref>next page</a></li>
+	<li><a nohref>{{language.NEXT_PAGE}}</a></li>
 	{{/next}}
 </ul>
 {{/showNav}}

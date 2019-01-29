@@ -1,4 +1,4 @@
-<h5>Inner transactions</h5>
+<h5>{{language.INNER_TRANSACTIONS}}</h5>
 <div id='empty'></div>
 
 <div id="aggregate_transactions" class="txlist">
@@ -16,17 +16,17 @@
 {{#showNav}}
 <ul id="paging">
 	{{#prev}}
-	<li><a rel="prev" href="#/block/{{height}}/{{prev}}">prev page</a></li>
+	<li><a rel="prev" href="#/block/{{height}}/{{prev}}">{{language.PREV_PAGE}}</a></li>
 	{{/prev}}
 	{{^prev}}
-	<li><a nohref>prev page</a></li>
+	<li><a nohref>{{language.PREV_PAGE}}</a></li>
 	{{/prev}}
 
 	{{#showNext}}
-	<li><a rel="next" href="#/block/{{height}}/{{next}}">next page</a></li>
+	<li><a rel="next" href="#/block/{{height}}/{{next}}">{{language.NEXT_PAGE}}</a></li>
 	{{/showNext}}
 	{{^showNext}}
-	<li><a nohref>next page</a></li>
+	<li><a nohref>{{language.NEXT_PAGE}}</a></li>
 	{{/showNext}}
 
 </ul>

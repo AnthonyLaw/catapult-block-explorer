@@ -3,10 +3,10 @@
 <table id="transactions" class="u-full-width">
   <thead>
     <tr>
-      <th>Signer </th>
-      <th>Height </th>
+      <th>{{language.SIGNER}} </th>
+      <th>{{language.HEIGHT}} </th>
       <th> </th>
-      <th>Deadline </th>
+      <th>{{language.DEADLINE}} </th>
     </tr>
   </thead>
   <tbody id="datarows">
@@ -23,17 +23,17 @@
 {{#showNav}}
 <ul id="paging">
 	{{#prev}}
-	<li><a rel="prev" href="#/block/{{height}}/{{prev}}">prev page</a></li>
+	<li><a rel="prev" href="#/block/{{height}}/{{prev}}">{{language.PREV_PAGE}}</a></li>
 	{{/prev}}
 	{{^prev}}
-	<li><a nohref>prev page</a></li>
+	<li><a nohref>{{language.PREV_PAGE}}</a></li>
 	{{/prev}}
 
 	{{#showNext}}
-	<li><a rel="next" href="#/block/{{height}}/{{next}}">next page</a></li>
+	<li><a rel="next" href="#/block/{{height}}/{{next}}">{{language.NEXT_PAGE}}</a></li>
 	{{/showNext}}
 	{{^showNext}}
-	<li><a nohref>next page</a></li>
+	<li><a nohref>{{language.NEXT_PAGE}}</a></li>
 	{{/showNext}}
 
 </ul>

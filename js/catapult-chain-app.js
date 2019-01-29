@@ -11,6 +11,13 @@
 		navOffsetTop = $nav.offset().top,
 		epochTimestamp = 1459468800000;
 
+	function getLanguage() {
+		(localStorage.getItem('language') == null) ? localStorage.setItem('language', 'en') : false;
+		$.ajax({
+		url:  '../assets/i18n/' +  localStorage.getItem('language') + '.json',
+		dataType: 'json', async: false, dataType: 'json',
+		success: function (lang) { localStorage.setItem('lang', JSON.stringify(lang))} });
+	}
 
 	function resize() {
 		$body.removeClass('has-docked-nav');
@@ -41,11 +48,29 @@
 		}
 	}
 
+	function bindHeader(){
+		var lang = JSON.parse(localStorage.getItem('lang'));
+
+		console.log('lang: ' + lang);
+		if (lang){
+			$('#title').text(lang.TITLE);
+			$('#current-height').text(lang.CURRENT_CHAIN_HEIGHT + " : ");
+			$('#menu-blocks').text(lang.MENU_BLOCKS);
+			$('#menu-unconfirmed').text(lang.MENU_UNCONFIRMED);
+			$('#menu-failed').text(lang.MENU_FAILED);
+			$('#menu-statistics').text(lang.MENU_STATISTICS);
+		}
+	}
+
 	function init() {
 		$window.on('scroll', onScroll);
 		$window.on('resize', resize);
 		$popoverLink.on('click', openPopover)
 		$document.on('click', closePopover)
+
+		getLanguage();
+
+		bindHeader();
 
 		$(document).keyup(function(evt) {
 			if (evt.altKey) { return; }
@@ -71,7 +96,7 @@
 		this.use(CatapultTypes);
 		this.use(CatapultFormat);
 
-		var host = location.hostname  // Replace location.hostname to your catapult rest-getway host address
+		var host = '40.90.163.184'  // Replace location.hostname to your catapult rest-getway host address
 		var apiHost = 'http://' + host + ':3000';
 		var wsHost = 'ws://' + host + ':3000/ws';
 		var getJson = function(a, b, c) {
@@ -231,6 +256,10 @@
 		});
 
 		// helper redirects
+
+		// test
+		// context.render('header.html')
+		// 	.appendTo(context.$element());
 
 		this.get('#/blocks/', function(context) { this.redirect('#/blocks/0'); });
 		this.get('#/blocks', function(context) { this.redirect('#/blocks/0'); });
@@ -520,6 +549,7 @@
 
 			getJson(`/account/${accountId}`, function(item) {
 				context.formatAccount(item);
+
 				context.render('t/account.html', item)
 					.appendTo(context.$element());
 
@@ -720,7 +750,7 @@
 
 	$(function() {
 		google.charts.load('current', {'packages':['corechart', 'controls']});
-
 		app.run('#/blocks/0');
+
 	});
 })(jQuery);

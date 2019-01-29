@@ -2,17 +2,17 @@
 {{#showNav}}
 <ul id="paging">
 	{{#showPrev}}
-	<li><a rel="prev" href="#/account/{{addr}}/{{prev}}">prev page (older txes)</a></li>
+	<li><a rel="prev" href="#/account/{{addr}}/{{prev}}">{{language.PREV_PAGE}}</a></li>
 	{{/showPrev}}
 	{{^showPrev}}
-	<li><a nohref>prev page (older txes)</a></li>
+	<li><a nohref>{{language.PREV_PAGE}}</a></li>
 	{{/showPrev}}
 
 	{{#showNext}}
-	<li><a rel="next" href="#/account/{{addr}}/{{next}}">next page</a></li>
+	<li><a rel="next" href="#/account/{{addr}}/{{next}}">{{language.NEXT_PAGE}}</a></li>
 	{{/showNext}}
 	{{^showNext}}
-	<li><a nohref>next page</a></li>
+	<li><a nohref>{{language.NEXT_PAGE}}</a></li>
 	{{/showNext}}
 
 </ul>

@@ -1,14 +1,14 @@
 <div id="block">
-<h5>Block details</h5>
+<h5>{{language.BLOCK_DETAILS}}</h5>
 <div class="row">
 	<div class="three columns">
-		Height:
+			{{language.HEIGHT}}:
 	</div>
 	<div class="three columns">
 		{{block.height_str}} <span class='dim'>(permalink: <a href="#/block/{{block.height_str}}">#</a>)</span>
 	</div>
 	<div class="three columns">
-		Difficulty:
+			{{language.DIFFICULTY}}:
 	</div>
 	<div class="three columns">
 		{{block.difficulty_fmt}} %  <span class='dim'>{{{block.difficulty_str}}}</span>
@@ -17,7 +17,7 @@
 
 <div class="row">
 	<div class="three columns">
-		Timestamp:
+			{{language.TIMESTAMP}}:
 	</div>
 	<div class="nine columns">
 		{{block.timestamp_fmt}} <span class='dim'>nem time: {{block.timestamp_str}}</span>
@@ -26,7 +26,7 @@
 
 <div class="row">
 	<div class="three columns">
-		Hash:
+			{{language.HASH}}:
 	</div>
 	<div class="nine columns mono">
 		{{meta.hash}}
@@ -35,7 +35,7 @@
 
 <div class="row">
 	<div class="three columns">
-		Harvester:
+			{{language.HARVESTER}}:
 	</div>
 	<div class="nine columns">
 		<a class='mono' href="#/account/{{block.signer}}/0">{{block.signer}}</a>
@@ -44,7 +44,7 @@
 
 <div class="row">
 	<div class="three columns">
-		# Transactions:
+		# {{language.TRANSACTIONS}}:
 	</div>
 	<div class="nine columns">
 		<strong>{{meta.numTransactions}}</strong>
@@ -53,17 +53,17 @@
 
 <div class="row">
 	<div class="three columns">
-		Fees:
+			{{language.FEES}}:
 	</div>
 	<div class="nine columns">
 		<strong>{{{meta.totalFee_fmt}}}</strong>
 	</div>
 </div>
 
-<h6>state related data</h5>
+<h6>{{language.STATE_RELATED_DATA}}</h5>
 <div class="row">
 	<div class="three columns">
-		state hash:
+		{{language.STATE_HASH}}:
 	</div>
 	<div class="nine columns mono">
 		<strong>{{{block.stateHash}}}</strong>
@@ -71,7 +71,7 @@
 </div>
 <div class="row">
 	<div class="three columns">
-		sub cache merkle roots:
+			{{language.SUB_CACHE_MERKLE_ROOTS}}:
 	</div>
 	<div class="nine columns">
 		&nbsp;
