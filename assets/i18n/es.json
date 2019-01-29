@@ -1,6 +1,7 @@
 {
   "TITLE":"NF Catapult Testnet Beta",
   "CURRENT_CHAIN_HEIGHT":"Altura actual",
+  "TIPS":"Consejo: Puedes usar flechas para navegar en p&aacute;ginas con paginaci&oacute;n",
   "MENU_BLOCKS":"Bloques",
   "MENU_UNCONFIRMED":"No confirmados",
   "MENU_FAILED":"Fracasos",

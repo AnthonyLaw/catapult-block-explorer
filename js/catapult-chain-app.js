@@ -59,6 +59,7 @@
 			$('#menu-unconfirmed').text(lang.MENU_UNCONFIRMED);
 			$('#menu-failed').text(lang.MENU_FAILED);
 			$('#menu-statistics').text(lang.MENU_STATISTICS);
+			$('#tip').text(lang.TIPS);
 		}
 	}
 

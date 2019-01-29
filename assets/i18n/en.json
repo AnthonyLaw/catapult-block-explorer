@@ -1,6 +1,7 @@
 {
   "TITLE":"NF Catapult Testnet Beta",
   "CURRENT_CHAIN_HEIGHT":"current chain height",
+  "TIPS":"tip: You can use arrows to navigate on pages with paging",
   "MENU_BLOCKS":"Blocks",
   "MENU_UNCONFIRMED":"Unconfirmed",
   "MENU_FAILED":"Failed",

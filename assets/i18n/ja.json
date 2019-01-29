@@ -1,6 +1,7 @@
 {
     "TITLE":"NF Catapult Testnet Beta",
     "CURRENT_CHAIN_HEIGHT":"現在のブロック高",
+    "TIPS":"備考: 下部の矢印でページを移動できます。",
     "MENU_BLOCKS":"Blocks",
     "MENU_UNCONFIRMED":"未承認",
     "MENU_FAILED":"失敗",

@@ -1,6 +1,7 @@
 {
   "TITLE":"NF Catapult Testnet Beta",
   "CURRENT_CHAIN_HEIGHT":"Altura do bloco",
+  "TIPS":"Dica: Voc&ecirc; pode utilizar as setas para navegar entre as p&aacute;ginas",
   "MENU_BLOCKS":"Blocos",
   "MENU_UNCONFIRMED":"N&atilde;o confirmados",
   "MENU_FAILED":"Falhas",
