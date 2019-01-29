@@ -97,7 +97,7 @@
 		this.use(CatapultTypes);
 		this.use(CatapultFormat);
 
-		var host = '40.90.163.184'  // Replace location.hostname to your catapult rest-getway host address
+		var host = location.hostname  // Replace location.hostname to your catapult rest-getway host address
 		var apiHost = 'http://' + host + ':3000';
 		var wsHost = 'ws://' + host + ':3000/ws';
 		var getJson = function(a, b, c) {
