@@ -7,12 +7,12 @@
 </td>
 <td>{{meta.height_str}} </td>
 <td>
-{{^transaction.namespaceType}}duration: {{{transaction.duration_fmt}}} {{/transaction.namespaceType}}
-	<br>fee: {{{transaction.fee_fmt}}} </td>
+{{^transaction.namespaceType}}{{language.SHORT_DURATION}}: {{{transaction.duration_fmt}}} {{/transaction.namespaceType}}
+	<br>{{language.SHORT_FEE}}: {{{transaction.fee_fmt}}} </td>
 <td>{{transaction.deadline_fmt}}</td>
 </tr>
 <tr class='txeshash'>
 <td class='mono' colspan=5>
-tx hash: <a href="#/namespace/{{meta.id}}">{{meta.hash}}</a>
+		{{language.SHORT_TX_HASH}}: <a href="#/namespace/{{meta.id}}">{{meta.hash}}</a>
 </td>
 </tr>

@@ -1,6 +1,6 @@
 {{#meta.aggregateId}} <hr> <strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} <h5> {{/meta.aggregateId}}
-Register Namespace transaction
+		{{language.REGISTER_NAMESPACE_TRANSACTION}}
 {{#meta.aggregateId}} </strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} </h5> {{/meta.aggregateId}}
 
@@ -8,7 +8,7 @@ Register Namespace transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Block:
+			{{language.BLOCK}}:
 	</div>
 	<div class="eight columns">
 		<a href="#/block/{{meta.height_str}}">{{meta.height_str}}</a>
@@ -17,7 +17,7 @@ Register Namespace transaction
 
 <div class="row">
 	<div class="three columns">
-		Hash:
+			{{language.HASH}}:
 	</div>
 	<div class="eight columns mono">
 		{{meta.hash}}
@@ -27,7 +27,7 @@ Register Namespace transaction
 
 <div class="row">
 	<div class="three columns">
-		Sender:
+			{{language.SENDER}}:
 	</div>
 	<div class="eight columns mono">
 		<a href="#/account/{{transaction.signer}}/0">{{transaction.signer}}</a>
@@ -37,7 +37,7 @@ Register Namespace transaction
 {{^transaction.namespaceType}}
 <div class="row">
 	<div class="three columns">
-		ROOT namespace:
+			{{language.ROOT_NAMESPACE}}:
 	</div>
 	<div class="eight columns mono">
 		{{transaction.name}} <span class="dim">{{{transaction.namespaceId_fmt}}}</span>
@@ -46,7 +46,7 @@ Register Namespace transaction
 
 <div class="row">
 	<div class="three columns">
-		Duration:
+			{{language.DURATION}}:
 	</div>
 	<div class="eight columns">
 		{{transaction.duration_fmt}}
@@ -57,7 +57,7 @@ Register Namespace transaction
 {{#transaction.namespaceType}}
 <div class="row">
 	<div class="three columns">
-		namespace:
+			{{language.NAMESPACE}}:
 	</div>
 	<div class="eight columns mono">
 		{{transaction.name}}
@@ -66,7 +66,7 @@ Register Namespace transaction
 
 <div class="row">
 	<div class="three columns">
-		Parent Id:
+			{{language.PARENT}} Id:
 	</div>
 	<div class="eight columns">
 		{{{transaction.parentId_fmt}}}
@@ -77,7 +77,7 @@ Register Namespace transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Fee:
+			{{language.FEES}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.fee_fmt}}}
@@ -86,7 +86,7 @@ Register Namespace transaction
 
 <div class="row">
 	<div class="three columns">
-		Deadline:
+			{{language.DEADLINE}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.deadline_fmt}}}
@@ -95,7 +95,7 @@ Register Namespace transaction
 
 <div class="row">
 	<div class="three columns">
-		Signature:
+			{{language.SIGNATURE}}:
 	</div>
 	<div class="eight columns mono">
 		<small>{{transaction.signature}}</small>

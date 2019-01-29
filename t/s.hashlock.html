@@ -1,6 +1,6 @@
 {{#meta.aggregateId}} <hr> <strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} <h5> {{/meta.aggregateId}}
-Hash lock transaction
+{{language.HASH_LOCK_TRANSACTION}}
 {{#meta.aggregateId}} </strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} </h5> {{/meta.aggregateId}}
 
@@ -8,7 +8,7 @@ Hash lock transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Block:
+			{{language.BLOCK}}:
 	</div>
 	<div class="eight columns">
 		<a href="#/block/{{meta.height_str}}">{{meta.height_str}}</a>
@@ -17,7 +17,7 @@ Hash lock transaction
 
 <div class="row">
 	<div class="three columns">
-		Hash:
+			{{language.HASH}}:
 	</div>
 	<div class="eight columns mono">
 		{{meta.hash}}
@@ -27,7 +27,7 @@ Hash lock transaction
 
 <div class="row">
 	<div class="three columns">
-		Sender:
+			{{language.SENDER}}:
 	</div>
 	<div class="eight columns mono">
 		<a href="#/account/{{transaction.signer}}/0">{{transaction.signer}}</a>
@@ -36,7 +36,7 @@ Hash lock transaction
 
 <div class="row">
 	<div class="three columns">
-		Mosaic Id:
+		{{language.MOSAIC}} Id:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.mosaicId_fmt}}}
@@ -44,7 +44,7 @@ Hash lock transaction
 </div>
 <div class="row">
 	<div class="three columns">
-		Amount:
+		{{language.AMOUNT}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.amount_fmt}}}
@@ -53,7 +53,7 @@ Hash lock transaction
 
 <div class="row">
 	<div class="three columns">
-		Duration:
+		{{language.DURATION}}:
 	</div>
 	<div class="eight columns">
 		{{transaction.duration_fmt}} blocks
@@ -64,7 +64,7 @@ Hash lock transaction
 
 <div class="row">
 	<div class="three columns">
-		Lock hash:
+			{{language.LOCK_HASH}}:
 	</div>
 	<div class="eight columns mono">
 		{{transaction.hash}}
@@ -74,7 +74,7 @@ Hash lock transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Fee:
+			{{language.FEES}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.fee_fmt}}}
@@ -83,7 +83,7 @@ Hash lock transaction
 
 <div class="row">
 	<div class="three columns">
-		Deadline:
+			{{language.DEADLINE}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.deadline_fmt}}}
@@ -92,7 +92,7 @@ Hash lock transaction
 
 <div class="row">
 	<div class="three columns">
-		Signature:
+			{{language.SIGNATURE}}:
 	</div>
 	<div class="eight columns mono">
 		<small>{{transaction.signature}}</small>

@@ -1,6 +1,6 @@
 {{#meta.aggregateId}} <hr> <strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} <h5> {{/meta.aggregateId}}
-Multisig modification transaction
+		{{language.MULTISIG_MODIFICATION_TRANSACTION}}
 {{#meta.aggregateId}} </strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} </h5> {{/meta.aggregateId}}
 
@@ -8,7 +8,7 @@ Multisig modification transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Block:
+			{{language.BLOCK}}:
 	</div>
 	<div class="eight columns">
 		<a href="#/block/{{meta.height_str}}">{{meta.height_str}}</a>
@@ -17,7 +17,7 @@ Multisig modification transaction
 
 <div class="row">
 	<div class="three columns">
-		Hash:
+			{{language.HASH}}:
 	</div>
 	<div class="eight columns mono">
 		{{meta.hash}}
@@ -27,7 +27,7 @@ Multisig modification transaction
 
 <div class="row">
 	<div class="three columns">
-		Sender:
+			{{language.SENDER}}:
 	</div>
 	<div class="eight columns mono">
 		<a href="#/account/{{transaction.signer}}/0">{{transaction.signer}}</a>
@@ -36,7 +36,7 @@ Multisig modification transaction
 
 <div class="row">
 	<div class="three columns">
-		min delta approval:
+			{{language.MIN_DELTA_APPROVAL}}:
 	</div>
 	<div class="eight columns mono">
 		{{transaction.minApprovalDelta}}
@@ -45,7 +45,7 @@ Multisig modification transaction
 
 <div class="row">
 	<div class="three columns">
-		min delta removal:
+		{{language.MIN_DELTA_REMOVAL}}:
 	</div>
 	<div class="eight columns mono">
 		{{transaction.minRemovalDelta}}
@@ -55,7 +55,7 @@ Multisig modification transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Fee:
+			{{language.FEES}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.fee_fmt}}}
@@ -64,7 +64,7 @@ Multisig modification transaction
 
 <div class="row">
 	<div class="three columns">
-		Deadline:
+			{{language.DEADLINE}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.deadline_fmt}}}
@@ -73,7 +73,7 @@ Multisig modification transaction
 
 <div class="row">
 	<div class="three columns">
-		Signature:
+			{{language.SIGNATURE}}:
 	</div>
 	<div class="eight columns mono">
 		<small>{{transaction.signature}}</small>
@@ -84,7 +84,7 @@ Multisig modification transaction
 {{#transaction.properties.length}}
 <div class="row">
 	<div class="three columns">
-		Properties present:
+			{{language.PROPERTIES_PRESENT}}:
 	</div>
 	<div class="eight columns mono">
 		<strong>{{transaction.properties.length}}</strong>
@@ -104,4 +104,4 @@ Multisig modification transaction
 	</div>
 </div>
 {{/transaction.modifications}}
- 
+
