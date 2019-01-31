@@ -1,8 +1,8 @@
-<h5>Aggregate transaction</h5>
+<h5>{{language.AGGREGATE_TRANSACTION}}</h5>
 
 <div class="row">
 	<div class="three columns">
-		Block:
+			{{language.BLOCK}}:
 	</div>
 	<div class="eight columns">
 		<a href="#/block/{{meta.height_str}}">{{meta.height_str}}</a>
@@ -11,7 +11,7 @@
 
 <div class="row">
 	<div class="three columns">
-		Hash:
+			{{language.HASH}}:
 	</div>
 	<div class="eight columns mono">
 		{{meta.hash}}
@@ -20,7 +20,7 @@
 
 <div class="row">
 	<div class="three columns">
-		Sender:
+			{{language.SENDER}}:
 	</div>
 	<div class="eight columns mono">
 		<a href="#/account/{{transaction.signer}}/0">{{transaction.signer}}</a>
@@ -29,7 +29,7 @@
 
 <div class="row">
 	<div class="three columns">
-		Fee:
+			{{language.FEES}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.fee_fmt}}}
@@ -38,7 +38,7 @@
 
 <div class="row">
 	<div class="three columns">
-		Deadline:
+			{{language.DEADLINE}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.deadline_fmt}}}
@@ -47,7 +47,7 @@
 
 <div class="row">
 	<div class="three columns">
-		Signature:
+			{{language.SIGNATURE}}:
 	</div>
 	<div class="eight columns mono">
 		<small>{{transaction.signature}}</small>
@@ -58,7 +58,7 @@
 {{#transaction.cosignatures.length}}
 <div class="row">
 	<div class="three columns">
-		Cosignatures present:
+		{{language.COSIGNATURES_PRESENT}}:
 	</div>
 	<div class="eight columns mono">
 		<strong>{{transaction.cosignatures.length}}</strong>
@@ -70,7 +70,7 @@
 	<div class="one column">&nbsp;
 	</div>
 	<div class="two columns">
-		Cosigner:
+		{{language.COSIGNER}}:
 	</div>
 	<div class="eight columns mono">
 		<a href="#/account/{{signer}}/0">{{signer}}</a>
@@ -80,7 +80,7 @@
 	<div class="one column">&nbsp;
 	</div>
 	<div class="two columns">
-		Signature:
+			{{language.SIGNATURE}}:
 	</div>
 	<div class="eight columns mono">
 		<small>{{signature}}</small>

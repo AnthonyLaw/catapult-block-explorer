@@ -1,7 +1,7 @@
 
 	<div class="row">
 		<div class="three columns">
-			Address:
+			{{language.ADDRESS}}:
 		</div>
 		<div class="eight columns">
 			<strong>{{account.address_fmt}}</strong>
@@ -10,7 +10,7 @@
 
 	<div class="row">
 		<div class="three columns">
-			Public key:
+			{{language.PUBLICKEY}}:
 		</div>
 		<div class="eight columns">
 			{{account.publicKey}}
@@ -19,7 +19,7 @@
 
 	<div class="row">
 		<div class="three columns">
-			Importance:
+			{{language.IMPORTANCE}}:
 		</div>
 		<div class="five columns textr">
 			{{{account.importance_fmt}}} <span class='dim'> * 10<sup>(-5)</sup></span>
@@ -29,7 +29,7 @@
 	<!--
 	<div class="row">
 		<div class="three columns">
-			Harvested blocks:
+			{{language.HARVESTED_BLOCKS}}:
 		</div>
 		<div class="two columns">
 			{{raw.harvestedBlocks}} <span class='dim'>(nembex)</span>
@@ -40,7 +40,7 @@
 	</div>
 	<div class="row">
 		<div class="three columns">
-			Harvested fees:
+			{{language.HARVESTED_FEES}}:
 		</div>
 		<div class="four columns textr">
 			{{{raw.balance.3_fmt}}} <span class='dim'>XEM</span>
@@ -48,7 +48,7 @@
 	</div>
 	-->
 <div>
-<h5>Owned mosaics</h5>
+<h5>{{language.OWNED_MOSAICS}}</h5>
 <div id="account_mosaics">
 	{{#account.mosaics}}
 	<div class="row">
@@ -65,7 +65,7 @@
 		<div class="one column">&nbsp;
 		</div>
 		<div class="two columns">
-			Quantity:
+			{{language.QUANTITY}}:
 		</div>
 		<div class="eight columns mono">
 			{{{amount_fmt}}}
@@ -74,7 +74,7 @@
 	{{/account.mosaics}}
 </div>
 
-<h5>Recent transactions</h5>
+<h5>{{language.RECENT_TRANSACTIONS}}</h5>
 <div id="account_transactions" class="txlist">
 </div>
 </div>

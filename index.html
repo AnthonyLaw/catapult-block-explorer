@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,46 +14,61 @@
 		<link rel="stylesheet" href="css/nembex.css">
 	</head>
 	<body class=''>
-		<div class="container">
-			<div id="header" class="row">
-				<form id="searchForm">
-					<div class="six columns">
-						<h1 class='logo'><img src="img/mijin.png" alt='mijin' align='top'/> / catapult</h1>
-					</div>
-					<div class="four columns">
-						<!--
-						<label for="search">Search</label>
-						<input class="u-full-width" type="search" placeholder="" id="search">
-						-->
-					</div>
-					<div class="two columns">
-						<!--
-						<label for="execute">&nbsp;</label>
-						<input class="u-pull-right" type="submit" id="execute" value="Search" />
-						-->
-					</div>
-				</form>
-			</div>
-			<div class="row">
-				<div class="twelve columns"><strong>current chain height:</strong> <span id="chain-height"></span></div>
+				<div class="container">
+						<div id="header" class="row">
+							<form id="searchForm">
+								<div class="eight columns">
+									<h1 class='logo' id='title'>NF Catapult Testnet Beta</h1>
+								</div>
+								<div class="four columns">
+										<select id="select_language" class="custom-select" style="width:200px;" onchange="setLanguage();">
+												<option value="" selected>Select language...</option>
+												<option value="en">English</option>
+												<option value="pt">Portuguese</option>
+												<option value="es">Spanish</option>
+												<option value="ja">Japanese</option>
+											</select>
+									<!--
+									<label for="search">Search</label>
+									<input class="u-full-width" type="search" placeholder="" id="search">
+									-->
+								</div>
+								<div class="two columns">
+									<!--
+									<label for="execute">&nbsp;</label>
+									<input class="u-pull-right" type="submit" id="execute" value="Search" />
+									-->
+								</div>
+							</form>
+						</div>
+						<div class="row">
+							<div class="nine columns">
+								<strong id='current-height'>current chain height</strong> <span id="chain-height"></span>
+							</div>
 
-			</div>
-			<div class="row">
-				<div class="twelve columns"><strong>tip:</strong> You can use arrows to navigate on pages with paging</div>
-			</div>
-		</div>
+							<div class="three columns">
+								<a class="github-button" href="https://github.com/AnthonyLaw/catapult-block-explorer" data-icon="mark-github" aria-label="Star ntkme/github-buttons on GitHub">Source</a>
+								<br />
+								<strong>Power by </strong><a target="_blank" href="https://hub.docker.com/r/techbureau/catapult-block-explorer/">Techbureau</a>
+							</div>
 
-		<div class="navbar-spacer"></div>
-		<nav class="navbar">
-		<div class="container">
-			<ul class="navbar-list">
-				<li class="navbar-item"><a class="navbar-link" href="#/blocks/0">Blocks</a></li>
-				<li class="navbar-item"><a class="navbar-link" href="#/unconfirmed/">Unconfirmed</a></li>
-				<li class="navbar-item"><a class="navbar-link" href="#/failed/">Failed</a></li>
-				<li class="navbar-item"><a class="navbar-link" href="#/statistics/from/0/to/0/grouping/60">Statistics</a></li> 
-			</ul>
-		</div>
-		</nav>
+						</div>
+						<div class="row">
+								<div class="twelve columns" id="tip"> You can use arrows to navigate on pages with paging</div>
+						</div>
+					</div>
+
+					<div class="navbar-spacer"></div>
+					<nav class="navbar">
+					<div class="container">
+						<ul class="navbar-list">
+							<li class="navbar-item"><a class="navbar-link" href="#/blocks/0" id='menu-blocks'>Blocks</a></li>
+							<li class="navbar-item"><a class="navbar-link" href="#/unconfirmed/" id='menu-unconfirmed'>Unconfirmed</a></li>
+							<li class="navbar-item"><a class="navbar-link" href="#/failed/" id='menu-failed'>Failed</a></li>
+							<li class="navbar-item"><a class="navbar-link" href="#/statistics/from/0/to/0/grouping/60" id='menu-statistics'>Statistics</a></li>
+						</ul>
+					</div>
+					</nav>
 		<div id="main" class="container">
 		</div>
 
@@ -66,5 +81,7 @@
 		<script src="js/sammy/sammy.js" ></script>
 		<script src="js/sammy/plugins/sammy.mustache.js" ></script>
 		<script src="js/catapult-chain-app.js" ></script>
+		<script src="js/custom.js" ></script>
+		<script async defer src="https://buttons.github.io/buttons.js"></script>
 	</body>
 </html>

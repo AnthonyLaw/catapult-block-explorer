@@ -1,6 +1,6 @@
 {{#meta.aggregateId}} <hr> <strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} <h5> {{/meta.aggregateId}}
-Transfer transaction
+{{language.TRANSFER_TRANSACTION}}
 {{#meta.aggregateId}} </strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} </h5> {{/meta.aggregateId}}
 
@@ -8,7 +8,7 @@ Transfer transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Block:
+			{{language.BLOCK}}:
 	</div>
 	<div class="eight columns">
 		<a href="#/block/{{meta.height_str}}">{{meta.height_str}}</a>
@@ -17,7 +17,7 @@ Transfer transaction
 
 <div class="row">
 	<div class="three columns">
-		Hash:
+			{{language.HASH}}:
 	</div>
 	<div class="eight columns mono">
 		{{meta.hash}}
@@ -27,7 +27,7 @@ Transfer transaction
 
 <div class="row">
 	<div class="three columns">
-		Sender:
+			{{language.SENDER}}:
 	</div>
 	<div class="eight columns mono">
 		<a href="#/account/{{transaction.signer}}/0">{{transaction.signer}}</a>
@@ -36,7 +36,7 @@ Transfer transaction
 
 <div class="row">
 	<div class="three columns">
-		Recipient:
+			{{language.RECIPIENT}}:
 	</div>
 	<div class="eight columns mono">
 		<a href="#/account/{{transaction.recipient}}/0">{{transaction.recipient_fmt}}</a>
@@ -47,7 +47,7 @@ Transfer transaction
 {{^transaction.mosaics}}
 <div class="row">
 	<div class="three columns">
-		Amount:
+			{{language.AMOUNT}}:
 	</div>
 	<div class="eight columns mono">
 		<strong>{{{amount_fmt}}}</strong>
@@ -57,7 +57,7 @@ Transfer transaction
 {{#transaction.mosaics.length}}
 <div class="row">
 	<div class="three columns">
-		Mosaics attached:
+			{{language.MOSAICS_ATTACHED}}:
 	</div>
 	<div class="eight columns mono">
 		<strong>{{transaction.mosaics.length}}</strong>
@@ -79,7 +79,7 @@ Transfer transaction
 	<div class="one column">&nbsp;
 	</div>
 	<div class="two columns">
-		Quantity:
+			{{language.QUANTITY}}:
 	</div>
 	<div class="eight columns mono">
 		{{{amount_fmt}}}
@@ -90,7 +90,7 @@ Transfer transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Fee:
+			{{language.FEES}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.fee_fmt}}}
@@ -99,7 +99,7 @@ Transfer transaction
 
 <div class="row">
 	<div class="three columns">
-		Deadline:
+			{{language.DEADLINE}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.deadline_fmt}}}
@@ -108,7 +108,7 @@ Transfer transaction
 
 <div class="row">
 	<div class="three columns">
-		Signature:
+			{{language.SIGNATURE}}:
 	</div>
 	<div class="eight columns mono">
 		<small>{{transaction.signature}}</small>
@@ -119,10 +119,10 @@ Transfer transaction
 
 <div class="row">
 	<div class="three columns">
-		Message:
+			{{language.MESSAGE}}:
 	</div>
 	<div class="one columns">
-		type: {{transaction.message.type}}
+			{{language.TYPE}}: {{transaction.message.type}}
 	</div>
 	<div class="six columns mono">
 		<small class='icon-mail'> {{transaction.message.payload}} </small>

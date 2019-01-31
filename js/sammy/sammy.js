@@ -1748,6 +1748,11 @@ $.extend(Sammy.DefaultLocationProxy.prototype , {
           callback = null;
         }
 
+        // load page language
+        if (data){
+          data.language = JSON.parse(localStorage.getItem('lang')) ;
+        }
+
         return this.loadPartials(partials)
                    .load(location)
                    .interpolate(data, location)
