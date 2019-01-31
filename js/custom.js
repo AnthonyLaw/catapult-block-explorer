@@ -4,3 +4,9 @@ function setLanguage(){
     localStorage.setItem('language', selectedValue);
     location.reload();
 }
+
+$(document).ready(function(){
+    if(localStorage.getItem('language')){
+        document.getElementById("select_language").value=localStorage.getItem('language');
+    }
+});
