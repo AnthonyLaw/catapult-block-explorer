@@ -351,13 +351,19 @@
 					} else {
 						blockHandler = function handler(obj) {
 							var obj = defaultBlockHandler(context, obj);
-							obj.className='newRow';
-							context.render('t/blocks.detail.html', obj)
-								.prependTo('#blocks > tbody').then(function() {
-									var body = $('#blocks > tbody')[0];
-									while (body.rows.length > 100)
-										$('#blocks')[0].deleteRow($('#blocks')[0].rows.length - 1);
+							var blockHeight = obj.block.height_str;
+							getJson(`/block/${blockHeight}`, function(block) {
+								obj.className='newRow';
+								obj.meta.numTransactions = block.meta.numTransactions;
+								context.fmtCatapultValue('totalFee', block.meta);
+								obj.meta.totalFee_fmt = block.meta.totalFee_fmt;
+								context.render('t/blocks.detail.html', obj)
+									.prependTo('#blocks > tbody').then(function() {
+										var body = $('#blocks > tbody')[0];
+										while (body.rows.length > 100)
+											$('#blocks')[0].deleteRow($('#blocks')[0].rows.length - 1);
 								});
+							})
 						};
 					}
 				});
