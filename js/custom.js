@@ -5,8 +5,8 @@ function setLanguage(){
     location.reload();
 }
 
-$(document).ready(function(){
-    if(localStorage.getItem('language')){
-        document.getElementById("select_language").value=localStorage.getItem('language');
-    }
-});
+// $(document).ready(function(){
+//     if(localStorage.getItem('language')){
+//         document.getElementById("select_language").value=localStorage.getItem('language');
+//     }
+// });
