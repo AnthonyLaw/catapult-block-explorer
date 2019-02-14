@@ -49,11 +49,11 @@ var CatapultFormat = function(app) {
 	},
 	fmtTimestamp: function(key, data, epochTimestamp) {
 		if (!(key in data)) { return; }
-		
+
 		var millis = this.long2val(data[key]) + epochTimestamp;
 		var d = new Date(0);
 		d.setUTCMilliseconds(millis);
-		
+
 		data[key + '_str'] = d.toUTCString();
 		data[key + '_fmt'] = d.toUTCString();
 	},
@@ -174,6 +174,11 @@ var CatapultFormat = function(app) {
 	},
 	fmtMsg: function(data) {
 		if (!data) { return; }
+		if(data){
+			if (data['type'] == 0){
+				data['payload'] = this.hex2a(data['payload']);
+			}
+		}
 		/*
 		if (data['message_data'].length > 0) {
 			data['hasMsg'] = true;
