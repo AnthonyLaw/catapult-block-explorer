@@ -6,6 +6,7 @@
   "MENU_UNCONFIRMED":"No confirmados",
   "MENU_FAILED":"Fracasos",
   "MENU_STATISTICS":"Estadística",
+  "MENU_NODE":"Node",
   "ADDRESS": "Dirección",
   "PUBLICKEY": "Llave pública",
   "IMPORTANCE": "Valor",
@@ -80,5 +81,8 @@
   "SHORT_TX_HASH":"tx hash",
   "SHORT_SECRET_PROOF":"secret proof",
   "SHORT_SECRET":"secreto",
-  "SHORT_DURATION":"duración"
+  "SHORT_DURATION":"duración",
+  "HOST":"Host",
+  "HOST_NAME": "Host Name",
+  "NODE_LIST": "Node List"
 }

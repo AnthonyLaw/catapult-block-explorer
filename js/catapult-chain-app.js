@@ -50,8 +50,6 @@
 
 	function bindHeader(){
 		var lang = JSON.parse(localStorage.getItem('lang'));
-
-		console.log('lang: ' + lang);
 		if (lang){
 			$('#title').text(lang.TITLE);
 			$('#current-height').text(lang.CURRENT_CHAIN_HEIGHT + " : ");
@@ -59,6 +57,7 @@
 			$('#menu-unconfirmed').text(lang.MENU_UNCONFIRMED);
 			$('#menu-failed').text(lang.MENU_FAILED);
 			$('#menu-statistics').text(lang.MENU_STATISTICS);
+			$('#menu-node').text(lang.MENU_NODE);
 			$('#tip').text(lang.TIPS);
 		}
 	}
@@ -97,7 +96,7 @@
 		this.use(CatapultTypes);
 		this.use(CatapultFormat);
 
-		var host = location.hostname  // Replace location.hostname to your catapult rest-getway host address
+		var host = "40.90.163.184"  // Replace location.hostname to your catapult rest-getway host address
 		var apiHost = 'http://' + host + ':3000';
 		var wsHost = 'ws://' + host + ':3000/ws';
 		var getJson = function(a, b, c) {
@@ -398,7 +397,9 @@
 			context.app.swap('');
 			setActiveLink('failed', context);
 
-			context.partial('t/failed.html')
+			let language =  JSON.parse(localStorage.getItem('lang'));
+
+			context.partial('t/failed.html', language)
 				.renderEach('t/failed.detail.html', failedStatuses)
 				.appendTo('#statuses');
 
@@ -477,6 +478,34 @@
 				context.formatTransaction(0, items, epochTimestamp);
 				context.render('t/s.transfer.html',items)
 					.appendTo(context.$element());
+			});
+		});
+
+		// show node list
+		this.get('#/node/', function(context){
+			context.app.swap('');
+			setActiveLink('node', context);
+
+			let language = JSON.parse(localStorage.getItem('lang')) ;
+
+			context.partial('t/nodeList.html', language);
+
+			$.ajax({
+				url:  '../assets/api-address.json',
+				dataType: 'json', async: false, dataType: 'json',
+				success: function (address) { localStorage.setItem('address', JSON.stringify(address))} });
+
+			const nodelist = JSON.parse(localStorage.getItem('address'));
+			 nodelist.forEach(node => {
+				$.getJSON('http://' + node + ':3000' + '/node/info', function(items) {
+
+				}).then(nodeInfo =>{
+					$.getJSON('http://' + nodeInfo.host + ':3000' + '/chain/height', function(items) {
+						nodeInfo.height = items.height[0];
+						return context.render('t/nodeList.detail.html', nodeInfo)
+							.appendTo('#nodelist');
+					});
+				});
 			});
 		});
 
