@@ -6,6 +6,7 @@
     "MENU_UNCONFIRMED": "未承認",
     "MENU_FAILED": "失敗",
     "MENU_STATISTICS": "統計情報",
+    "MENU_NODE":"Node",
     "ADDRESS": "アドレス",
     "PUBLICKEY": "公開鍵",
     "IMPORTANCE": "インポータンス",
@@ -80,5 +81,7 @@
     "SHORT_TX_HASH": "ハッシュ",
     "SHORT_SECRET_PROOF": "プルーフ",
     "SHORT_SECRET": "シークレット",
-    "SHORT_DURATION": "期間"
+    "SHORT_DURATION": "期間",
+    "HOST":"Host",
+    "HOST_NAME": "Host Name"
   }
