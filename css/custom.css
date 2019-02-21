@@ -168,6 +168,35 @@ ul#paging li + li {
 
 ul#paging li a[nohref] { color: #c7c8c7; }
 
+.header-menu > .navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.header-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.header-menu ul li {
+  float: left;
+  padding: 10px;
+}
+
+.header-menu ul li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.custom-select {
+  width:200px;
+  margin-top: 5px;
+}
 /* Larger than tablet */
 @media (min-width: 750px) {
   /* Navbar */
