@@ -83,5 +83,6 @@
   "SHORT_SECRET":"secreto",
   "SHORT_DURATION":"duración",
   "HOST":"Host",
-  "HOST_NAME": "Host Name"
+  "HOST_NAME": "Host Name",
+  "NODE_LIST": "Node List"
 }

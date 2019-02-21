@@ -83,5 +83,6 @@
     "SHORT_SECRET": "シークレット",
     "SHORT_DURATION": "期間",
     "HOST":"Host",
-    "HOST_NAME": "Host Name"
+    "HOST_NAME": "Host Name",
+    "NODE_LIST": "Node List"
   }
