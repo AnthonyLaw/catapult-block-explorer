@@ -84,5 +84,17 @@
   "SHORT_DURATION":"duration",
   "HOST":"Host",
   "HOST_NAME": "Host Name",
-  "NODE_LIST": "Node List"
+  "NODE_LIST": "Node List",
+  "ACCOUNT_LINK_TRANSACTION":"Account link transaction",
+  "LINKED":"Linked",
+  "SHORT_ACCOUNT_LINK":"account link",
+  "ALIAS_ADDRESS_TRANSACTION":"Alias address transaction",
+  "ALIAS":"Alias",
+  "SHORT_ALIAS":"alias",
+  "ALIAS_MOSAIC_TRANSACTION":"Alias mosaic transaction",
+  "SHORT_ALIAS_MOSAIC":"alias mosaic",
+  "ADDRESS_PROPERTY_TRANSACTION":"Address property transaction",
+  "PROPERTY_TYPE":"Property type",
+  "MODIFICATIONS_PRESENT":"Modifications present",
+  "SHORT_ADDRESS_PROPERTY":"address property"
 }

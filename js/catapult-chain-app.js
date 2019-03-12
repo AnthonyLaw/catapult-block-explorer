@@ -172,6 +172,7 @@
 		function createTemplateMap(TxType, prefix) {
 			var templatesPrefix = 't/' + prefix;
 			return {
+				[TxType.AccountLink]: templatesPrefix + '.account.link.html',
 				[TxType.AggregateComplete]: templatesPrefix + '.aggregate.html',
 				[TxType.AggregateBonded]: templatesPrefix + '.aggregate.html',
 				[TxType.HashLock]: templatesPrefix + '.hashlock.html',
@@ -180,6 +181,9 @@
 				[TxType.RegisterNamespace]: templatesPrefix + '.namespace.html',
 				[TxType.MosaicDefinition]: templatesPrefix + '.mosaic.html',
 				[TxType.MosaicSupplyChange]: templatesPrefix + '.mosaic.supply.html',
+				[TxType.AliasAddress]: templatesPrefix + '.alias.address.html',
+				[TxType.AliasMosaic]: templatesPrefix + '.alias.mosaic.html',
+				[TxType.AddressProperty]: templatesPrefix + '.property.address.html',
 				[TxType.Transfer]: templatesPrefix + '.transfer.html',
 				[TxType.ModifyMultisigAccount]: templatesPrefix + '.multisig.html'
 			};
@@ -188,7 +192,10 @@
 		function createTxRenderer(context, tx, fun) {
 			var txTemplateMap = createTemplateMap(context.TxType, 'short');
 			return function() {
-				return fun(context.render(txTemplateMap[tx.transaction.type], tx));
+				var type = tx.transaction.type;
+				if (!(type in txTemplateMap))
+					throw ('template not found t/short.(' + context.int2Hex(type) + ')');
+				return fun(context.render(txTemplateMap[type], tx));
 			};
 		}
 
@@ -256,11 +263,6 @@
 		});
 
 		// helper redirects
-
-		// test
-		// context.render('header.html')
-		// 	.appendTo(context.$element());
-
 		this.get('#/blocks/', function(context) { this.redirect('#/blocks/0'); });
 		this.get('#/blocks', function(context) { this.redirect('#/blocks/0'); });
 
@@ -529,6 +531,7 @@
 			});
 		}
 
+		addSupport(this, 'accountLink');
 		addSupport(this, 'namespace');
 		addSupport(this, 'mosaic');
 		addSupport(this, 'mosaicSupply');
@@ -536,6 +539,9 @@
 		addSupport(this, 'hashlock');
 		addSupport(this, 'secretlock');
 		addSupport(this, 'secretproof');
+		addSupport(this, 'aliasAddress');
+		addSupport(this, 'aliasMosaic');
+		addSupport(this, 'propertyAddress');
 
 		this.get('#/aggregate/:txid', function(context) {
 			context.app.swap('');
