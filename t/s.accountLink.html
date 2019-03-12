@@ -1,6 +1,6 @@
 {{#meta.aggregateId}} <hr> <strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} <h5> {{/meta.aggregateId}}
-Account link transaction
+{{language.ACCOUNT_LINK_TRANSACTION}}
 {{#meta.aggregateId}} </strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} </h5> {{/meta.aggregateId}}
 
@@ -8,7 +8,7 @@ Account link transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Block:
+		{{language.BLOCK}}:
 	</div>
 	<div class="eight columns">
 		<a href="#/block/{{meta.height_str}}">{{meta.height_str}}</a>
@@ -17,7 +17,7 @@ Account link transaction
 
 <div class="row">
 	<div class="three columns">
-		Hash:
+		{{language.HASH}}:
 	</div>
 	<div class="eight columns mono">
 		{{meta.hash}}
@@ -27,7 +27,7 @@ Account link transaction
 
 <div class="row">
 	<div class="three columns">
-		Sender:
+		{{language.SENDER}}:
 	</div>
 	<div class="eight columns mono">
 		<a href="#/account/{{transaction.signer}}/0">{{transaction.signer}}</a>
@@ -36,7 +36,7 @@ Account link transaction
 
 <div class="row">
 	<div class="three columns">
-		linked:
+		{{language.LINKED}}:
 	</div>
 	<div class="eight columns mono">
 		<a href="#/account/{{transaction.address}}/0">{{transaction.address_fmt}}</a>
@@ -46,7 +46,7 @@ Account link transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Fee:
+		{{language.FEES}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.fee_fmt}}}
@@ -55,7 +55,7 @@ Account link transaction
 
 <div class="row">
 	<div class="three columns">
-		Deadline:
+		{{language.DEADLINE}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.deadline_fmt}}}
@@ -64,7 +64,7 @@ Account link transaction
 
 <div class="row">
 	<div class="three columns">
-		Signature:
+		{{language.SIGNATURE}}:
 	</div>
 	<div class="eight columns mono">
 		<small>{{transaction.signature}}</small>

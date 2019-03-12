@@ -1,6 +1,6 @@
 {{#meta.aggregateId}} <hr> <strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} <h5> {{/meta.aggregateId}}
-Address property transaction
+{{language.ADDRESS_PROPERTY_TRANSACTION}}
 {{#meta.aggregateId}} </strong> {{/meta.aggregateId}}
 {{^meta.aggregateId}} </h5> {{/meta.aggregateId}}
 
@@ -8,7 +8,7 @@ Address property transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Block:
+		{{language.BLOCK}}:
 	</div>
 	<div class="eight columns">
 		<a href="#/block/{{meta.height_str}}">{{meta.height_str}}</a>
@@ -17,7 +17,7 @@ Address property transaction
 
 <div class="row">
 	<div class="three columns">
-		Hash:
+		{{language.HASH}}:
 	</div>
 	<div class="eight columns mono">
 		{{meta.hash}}
@@ -27,7 +27,7 @@ Address property transaction
 
 <div class="row">
 	<div class="three columns">
-		Sender:
+		{{language.SENDER}}:
 	</div>
 	<div class="eight columns mono">
 		<a href="#/account/{{transaction.signer}}/0">{{transaction.signer}}</a>
@@ -36,7 +36,7 @@ Address property transaction
 
 <div class="row">
 	<div class="three columns">
-		property type:
+		{{language.PROPERTY_TYPE}}:
 	</div>
 	<div class="eight columns mono">
 		<b>{{{transaction.propertyType_fmt}}}</b>
@@ -46,7 +46,7 @@ Address property transaction
 {{^meta.aggregateId}}
 <div class="row">
 	<div class="three columns">
-		Fee:
+		{{language.FEES}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.fee_fmt}}}
@@ -55,7 +55,7 @@ Address property transaction
 
 <div class="row">
 	<div class="three columns">
-		Deadline:
+		{{language.DEADLINE}}:
 	</div>
 	<div class="eight columns mono">
 		{{{transaction.deadline_fmt}}}
@@ -64,7 +64,7 @@ Address property transaction
 
 <div class="row">
 	<div class="three columns">
-		Signature:
+		{{language.SIGNATURE}}:
 	</div>
 	<div class="eight columns mono">
 		<small>{{transaction.signature}}</small>
@@ -75,7 +75,7 @@ Address property transaction
 {{#transaction.modifications.length}}
 <div class="row">
 	<div class="three columns">
-		Modifications present:
+		{{language.MODIFICATIONS_PRESENT}}:
 	</div>
 	<div class="eight columns mono">
 		<strong>{{transaction.modifications.length}}</strong>
@@ -88,7 +88,7 @@ Address property transaction
 	<div class="one column">&nbsp;
 	</div>
 	<div class="two columns">
-		type:
+		{{language.TYPE}}:
 	</div>
 	<div class="eight columns mono">
 		{{type}}
@@ -98,7 +98,7 @@ Address property transaction
 	<div class="one column">&nbsp;
 	</div>
 	<div class="two columns">
-		Value:
+		{{language.VALUE}}:
 	</div>
 	<div class="eight columns mono">
 		{{value}}
