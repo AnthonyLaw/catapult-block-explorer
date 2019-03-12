@@ -72,23 +72,31 @@ var CatapultFormat = function(app) {
 		if (!(key in data)) { return; }
 		this.fmtCatapultId(key, data);
 
-		if (data[key][1] === 0xD525AD41 && data[key][0] === 0xD95FCF29) {
-			data[key + '_str'] += " (XEM)";
-			data[key + '_fmt'] += " (XEM)";
+		if (data[key][1] === 0x941299b2 && data[key][0] === 0xb7e1291c) {
+			data[key + '_str'] += " (cat.harvest)";
+			data[key + '_fmt'] += " (cat.harvest)";
+		} else if (data[key][1] === 0x85bbea6c && data[key][0] === 0xc462b244) {
+			data[key + '_str'] += " (cat.currency)";
+			data[key + '_fmt'] += " (cat.currency)";
 		}
 	},
-	fmtPropertyValue: function(key, data) {
+	fmtMosaicNonce: function(key, data) {
+		data[key + '_str'] = "0x" + this.int2Hex(data[key]);
+		data[key + '_fmt'] = "0x" + this.int2Hex(data[key]);
+	},
+	fmtMosaicPropertyValue: function(key, data) {
 		if (!(key in data)) { return; }
 		data[key + '_str'] = "0x" + this.int2Hex(data[key][1]) + "<span class='sep'></span>" + this.int2Hex(data[key][0]);
 		data[key + '_fmt'] = "0x" + this.int2Hex(data[key][1]) + "<span class='sep'></span>" + this.int2Hex(data[key][0]);
 	},
-	fmtPropertyId: function(key, data) {
+	fmtMosaicPropertyId: function(key, data) {
 		if (!(key in data)) { return; }
 		var mapping = {
 			0: 'flags',
 			1: 'divisibility',
 			2: 'duration'
 		};
+
 		var value = mapping[data[key]];
 		data[key + '_str'] = value;
 		data[key + '_fmt'] = value;
@@ -126,6 +134,18 @@ var CatapultFormat = function(app) {
 			o = r;
 		}
 		data[key + '_fmt'] = o;
+	},
+	fmtPropertyType: function(key, data) {
+		if (!(key in data)) { return; }
+
+		var mapping = {
+			1: 'address',
+			2: 'mosaic id',
+			4: 'transaction type'
+		};
+		var value = mapping[data[key]];
+		data[key + '_str'] = value;
+		data[key + '_fmt'] = value;
 	},
 
 	fmtCatapultValue: function(key,data) {
@@ -237,16 +257,17 @@ var CatapultFormat = function(app) {
 		this.fmtDuration('duration', item.transaction);
 	},
 	formatMosaicDefinitionTransaction: function(i, item) {
+		console.log("itme: " + JSON.stringify(item));
 		this.fmtCatapultId('mosaicId', item.transaction);
-		this.fmtCatapultId('parentId', item.transaction);
+		this.fmtMosaicNonce('mosaicNonce', item.transaction);
 		var self = this;
 		$.each(item.transaction.properties, function(j, at){
-			self.fmtPropertyId('id', at);
-			self.fmtPropertyValue('value', at);
+			self.fmtMosaicPropertyId('id', at);
+			self.fmtMosaicPropertyValue('value', at);
 		});
 	},
 	formatMosaicSupplyTransaction: function(i, item) {
-		this.fmtCatapultId('mosaicId', item.transaction);
+		this.fmtMosaicId('mosaicId', item.transaction);
 		this.fmtCatapultSupply('delta', item.transaction);
 		this.fmtSupplyDirection('direction', item.transaction);
 	},
@@ -269,6 +290,23 @@ var CatapultFormat = function(app) {
 		this.fmtHashAlgorithm('hashAlgorithm', item.transaction);
 		this.fmtSecretProof('proof', item.transaction);
 	},
+	formatAliasAddressTransaction: function(i, item) {
+		this.fmtCatapultAddress('address', item.transaction);
+		// use fmtMosaicId deliberately here
+		this.fmtMosaicId('namespaceId', item.transaction);
+	},
+	formatAliasMosaicTransaction: function(i, item) {
+		this.fmtMosaicId('mosaicId', item.transaction);
+		// use fmtMosaicId deliberately here
+		this.fmtMosaicId('namespaceId', item.transaction);
+	},
+	formatAccountLinkTransaction: function(i, item) {
+		// temporary
+		this.fmtUnbase('bin', item.transaction);
+	},
+	formatAddressProperty: function(i, item) {
+		this.fmtPropertyType('propertyType', item.transaction);
+	},
 	formatTransaction: function(i, item, epochTimestamp) {
 		this.fmtCatapultHeight('height', item.meta);
 		this.fmtCatapultValue('fee', item.transaction);
@@ -277,6 +315,7 @@ var CatapultFormat = function(app) {
 
 		var TxType = app.context_prototype.prototype.TxType;
 		var dispatcher = {
+			[TxType.AccountLink]: this.formatAccountLinkTransaction,
 			[TxType.AggregateComplete]: this.formatAggregateTransaction,
 			[TxType.AggregateBonded]: this.formatAggregateTransaction,
 			[TxType.HashLock]: this.formatHashLockTransaction,
@@ -285,6 +324,9 @@ var CatapultFormat = function(app) {
 			[TxType.MosaicDefinition]: this.formatMosaicDefinitionTransaction,
 			[TxType.MosaicSupplyChange]: this.formatMosaicSupplyTransaction,
 			[TxType.RegisterNamespace]: this.formatRegisterNamespaceTransaction,
+			[TxType.AliasAddress]: this.formatAliasAddressTransaction,
+			[TxType.AliasMosaic]: this.formatAliasMosaicTransaction,
+			[TxType.AddressProperty]: this.formatAddressProperty,
 			[TxType.Transfer]: this.formatTransferTransaction,
 			[TxType.ModifyMultisigAccount]: this.formatMultisigTransaction
 		};
