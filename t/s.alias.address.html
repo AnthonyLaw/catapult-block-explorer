@@ -1,0 +1,82 @@
+{{#meta.aggregateId}} <hr> <strong> {{/meta.aggregateId}}
+{{^meta.aggregateId}} <h5> {{/meta.aggregateId}}
+{{language.ALIAS_ADDRESS_TRANSACTION}}
+{{#meta.aggregateId}} </strong> {{/meta.aggregateId}}
+{{^meta.aggregateId}} </h5> {{/meta.aggregateId}}
+
+
+{{^meta.aggregateId}}
+<div class="row">
+	<div class="three columns">
+		{{language.BLOCK}}:
+	</div>
+	<div class="eight columns">
+		<a href="#/block/{{meta.height_str}}">{{meta.height_str}}</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="three columns">
+		{{language.HASH}}:
+	</div>
+	<div class="eight columns mono">
+		{{meta.hash}}
+	</div>
+</div>
+{{/meta.aggregateId}}
+
+<div class="row">
+	<div class="three columns">
+		{{language.SENDER}}:
+	</div>
+	<div class="eight columns mono">
+		<a href="#/account/{{transaction.signer}}/0">{{transaction.signer}}</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="three columns">
+		id:
+	</div>
+	<div class="eight columns mono">
+		<a href="#/account/{{transaction.address}}/0">{{transaction.address_fmt}}</a>
+	</div>
+</div>
+
+<div class="row">
+	<div class="three columns">
+		{{language.ALIAS}}:
+	</div>
+	<div class="eight columns mono">
+		{{{transaction.namespaceId_fmt}}}
+	</div>
+</div>
+
+{{^meta.aggregateId}}
+<div class="row">
+	<div class="three columns">
+		{{language.FEES}}:
+	</div>
+	<div class="eight columns mono">
+		{{{transaction.fee_fmt}}}
+	</div>
+</div>
+
+<div class="row">
+	<div class="three columns">
+		{{language.DEADLINE}}:
+	</div>
+	<div class="eight columns mono">
+		{{{transaction.deadline_fmt}}}
+	</div>
+</div>
+
+<div class="row">
+	<div class="three columns">
+		{{language.SIGNATURE}}:
+	</div>
+	<div class="eight columns mono">
+		<small>{{transaction.signature}}</small>
+	</div>
+</div>
+{{/meta.aggregateId}}
